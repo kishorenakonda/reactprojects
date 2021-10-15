@@ -1,0 +1,11 @@
+.northern {
+    background-color: red;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.southern {
+    background-color: blue;
+    font-size: 30px;
+    padding: 10px;
+}
