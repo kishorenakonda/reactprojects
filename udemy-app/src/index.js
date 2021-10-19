@@ -7,6 +7,7 @@ import profile3 from './images/kishore_img_3.jpg';
 import SingleComment from './components/SingleComment';
 import UserCard from './components/UserCard';
 import Hemisphere from './components/Hemisphere';
+import HandlingForms from './components/HandlingForms';
 
 // A component is a Function or Class that produces HTML to show user using JSX
 // and handles feedback from the user using event handlers
@@ -188,6 +189,7 @@ ReactDOM.render(
     // <App />,
     // <CommentsApp />,
     // <LocationApp />,
-    <LocationClassApp />,
+    // <LocationClassApp />,
+    <HandlingForms />,
     document.querySelector('#root')
 )
