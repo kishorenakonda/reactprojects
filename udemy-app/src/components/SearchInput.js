@@ -22,7 +22,7 @@ class SearchInput extends React.Component {
 
     onFormSubmitArrowFunction = (event) => {
         event.preventDefault();
-        console.log(this.state.entry);
+        // console.log(this.state.entry);
         this.props.onSearchSubmit(this.state.entry);
     }
 
