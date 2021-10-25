@@ -10,6 +10,8 @@ import ImageList from './ImageList';
 //     )
 // }
 
+// Class Based Component
+// If we want to use state property then we need to use class based implementation
 class HandlingForms extends React.Component {
 
     constructor(props) {
