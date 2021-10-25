@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactModal from "./ReactModal";
 
 class Contact extends React.Component {
     // Programatically redirecting to new route from current route
@@ -22,6 +23,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div>
+                <ReactModal></ReactModal>
                 <div className="ui raised very padded text container segment" style={{ marginTop: '80px' }}>
                     {/* <Link to="/card/kishore" className="ui header"> Kishore </Link> */}
                     <h3 className="ui header" onClick={this.onRouteTo('kishore')}> Contact </h3>
