@@ -9,6 +9,7 @@ import UserCard from './components/UserCard';
 import Hemisphere from './components/Hemisphere';
 import HandlingForms from './components/HandlingForms';
 import RouterApp from './components/RouterApp';
+import ContextApiApp from './components/ContextApiApp';
 
 // A component is a Function or Class that produces HTML to show user using JSX
 // and handles feedback from the user using event handlers
@@ -192,6 +193,7 @@ ReactDOM.render(
     // <LocationApp />,
     // <LocationClassApp />,
     // <HandlingForms />,
-    <RouterApp />,
+    // <RouterApp />,
+    <ContextApiApp />,
     document.querySelector('#root')
 )
