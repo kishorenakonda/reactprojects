@@ -195,7 +195,7 @@ ReactDOM.render(
     // <LocationClassApp />,
     // <HandlingForms />,
     // <RouterApp />,
-    // <ContextApiApp />,
-    <HooksApp />,
+    <ContextApiApp />,
+    // <HooksApp />,
     document.querySelector('#root')
 )

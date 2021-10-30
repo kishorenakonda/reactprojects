@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { AuthContext } from "../contexts/AuthContext";
 
@@ -25,39 +25,61 @@ import { AuthContext } from "../contexts/AuthContext";
 // }
 
 // -- Context Provider with Context Consumer --
-class ContextNavbar extends React.Component {
-    render() {
-        return (
-            <AuthContext.Consumer>{(authContext) => {
-                return (
-                    <ThemeContext.Consumer>{(themeContext) => {
-                        const { isDarkTheme, darkTheme, lightTheme } = themeContext;
-                        const theme = isDarkTheme ? darkTheme : lightTheme;
+// class ContextNavbar extends React.Component {
+//     render() {
+//         return (
+//             <AuthContext.Consumer>{(authContext) => {
+//                 return (
+//                     <ThemeContext.Consumer>{(themeContext) => {
+//                         const { isDarkTheme, darkTheme, lightTheme } = themeContext;
+//                         const theme = isDarkTheme ? darkTheme : lightTheme;
 
-                        const { isLoggedIn, changeAuthStatus } = authContext;
+//                         const { isLoggedIn, changeAuthStatus } = authContext;
 
-                        return (
-                            <nav style={{ background: theme.background, color: theme.text, height: '120px', textAlign: 'center' }}>
-                                <h2 style={{ textAlign: 'center' }}>
-                                    Udemy
-                                </h2>
+//                         return (
+//                             <nav style={{ background: theme.background, color: theme.text, height: '120px', textAlign: 'center' }}>
+//                                 <h2 style={{ textAlign: 'center' }}>
+//                                     Udemy
+//                                 </h2>
 
-                                <p onClick={changeAuthStatus}> User is : {isLoggedIn ? 'Logged In' : 'Logged Out'} </p>
+//                                 <p onClick={changeAuthStatus}> User is : {isLoggedIn ? 'Logged In' : 'Logged Out'} </p>
 
-                                <div className="ui three buttons">
-                                    <button className="ui button"> Overview </button>
-                                    <button className="ui button"> Contact </button>
-                                    <button className="ui button"> Support </button>
-                                </div>
-                            </nav>
-                        )
-                    }}
-                    </ThemeContext.Consumer>
-                )
-            }}
-            </AuthContext.Consumer>
-        )
-    }
+//                                 <div className="ui three buttons">
+//                                     <button className="ui button"> Overview </button>
+//                                     <button className="ui button"> Contact </button>
+//                                     <button className="ui button"> Support </button>
+//                                 </div>
+//                             </nav>
+//                         )
+//                     }}
+//                     </ThemeContext.Consumer>
+//                 )
+//             }}
+//             </AuthContext.Consumer>
+//         )
+//     }
+// }
+
+const ContextNavbar = () => {
+    const { isDarkTheme, darkTheme, lightTheme } = useContext(ThemeContext);
+    const theme = isDarkTheme ? darkTheme : lightTheme;
+
+    const { isLoggedIn, changeAuthStatus } = useContext(AuthContext);
+
+    return (
+        <nav style={{ background: theme.background, color: theme.text, height: '120px', textAlign: 'center' }}>
+            <h2 style={{ textAlign: 'center' }}>
+                Udemy
+            </h2>
+
+            <p onClick={changeAuthStatus}> User is : {isLoggedIn ? 'Logged In' : 'Logged Out'} </p>
+
+            <div className="ui three buttons">
+                <button className="ui button"> Overview </button>
+                <button className="ui button"> Contact </button>
+                <button className="ui button"> Support </button>
+            </div>
+        </nav>
+    )
 }
-
 export default ContextNavbar;
